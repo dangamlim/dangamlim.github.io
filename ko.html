@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="경찰대학 행정학과 임정언의 연구와 프로젝트를 소개합니다.">
+<meta name="theme-color" content="#f8f8f6">
+<title>임정언 | Jeongeon Lim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#171917;--muted:#626763;--paper:#fafaf8;--line:#dcdeda;--accent:#476757;--sans:"Inter","Noto Sans KR",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.75 var(--sans);word-break:keep-all}
+a{color:inherit}
+a:focus-visible{outline:3px solid #527562;outline-offset:5px}
+.wrap{width:min(1280px,calc(100% - 112px));margin-inline:auto}
+.skip{position:absolute;left:1rem;top:-5rem;z-index:5;padding:.5rem 1rem;background:#fff}
+.skip:focus{top:.5rem}
+header{background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-size:16px;font-weight:800;letter-spacing:-.04em;text-decoration:none}
+.header-actions{display:flex;align-items:center;gap:40px}
+nav{display:flex;gap:38px;align-items:center}
+.language-switch{display:flex;align-items:center;gap:8px;padding-left:26px;border-left:1px solid var(--line);font-size:12px;white-space:nowrap}
+.language-switch a{color:var(--muted);text-decoration:none}
+.language-switch a[aria-current="page"]{color:var(--ink);font-weight:700}
+.language-switch a:hover{text-decoration:underline;text-underline-offset:4px}
+.language-switch span{color:#a6aaa5}
+nav a{color:#4e544f;font-size:13px;font-weight:600;text-decoration:none}
+nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.96fr);gap:7%;align-items:center;padding-top:76px;padding-bottom:82px}
+.hero-copy{padding:35px 0}
+.eyebrow{margin:0 0 24px;color:var(--accent);font-size:11px;line-height:1.5;font-weight:700;letter-spacing:.12em}
+.hero h1{margin:0;color:#1a1c1a;font-size:clamp(55px,6.4vw,90px);font-weight:700;line-height:.98;letter-spacing:-.07em}
+.hero h1 span{display:block}
+.name{margin:30px 0 12px;font-size:19px;font-weight:700;letter-spacing:-.03em}
+.intro{max-width:380px;margin:0;color:var(--muted);font-size:15px;line-height:1.9}
+.text-link{display:inline-flex;align-items:center;gap:40px;margin-top:32px;padding:13px 17px;background:#222824;color:#fff;font-size:13px;font-weight:600;text-decoration:none}
+.text-link:hover{background:#43574a}
+.hero-image{height:min(560px,42vw);width:min(100%,436px);justify-self:center;overflow:hidden;background:#17202b}
+.hero-image img{display:block;width:100%;height:100%;object-fit:contain}
+.section{scroll-margin-top:20px}
+#cv{padding:92px 0 96px;background:#fff;border-top:1px solid var(--line)}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:52px}
+.section-heading .eyebrow{margin-bottom:12px}
+.section h2{margin:0;font-size:clamp(36px,5vw,59px);line-height:1.1;font-weight:700;letter-spacing:-.055em}
+.section-subtitle{max-width:340px;margin:0;color:var(--muted);font-size:14px;line-height:1.8}
+.experience-group{display:grid;grid-template-columns:minmax(185px,.8fr) minmax(0,2fr);gap:clamp(30px,5vw,90px);padding:34px 0;border-top:1px solid var(--line)}
+.experience-group h3{margin:0;font-size:16px;font-weight:700;line-height:1.6;letter-spacing:-.025em}
+.experience-list{list-style:none;margin:0;padding:0}
+.experience-list li{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:13px 0;border-bottom:1px solid #ebede9}
+.experience-list li:first-child{padding-top:0}
+.experience-list li:last-child{border:0;padding-bottom:0}
+.experience-title{font-size:15px;font-weight:600;line-height:1.65;letter-spacing:-.018em}
+.experience-date{flex-shrink:0;color:var(--muted);font-size:12px;line-height:1.5;text-align:right}
+.about{padding:94px 0 100px;background:#e9ece7}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:8%}
+.about .eyebrow{margin-bottom:12px}
+.about-grid p:not(.eyebrow){margin:0 0 20px;max-width:600px;font-size:16px;line-height:1.95}
+.about-grid p:last-child{margin-bottom:0}
+footer{padding:28px 0;background:#222824;color:#f3f4f1}
+.foot{display:flex;justify-content:space-between;gap:12px;font-size:12px}
+.foot a{text-underline-offset:4px}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 40px)}
+ .bar{min-height:67px}
+ .header-actions{gap:15px}
+ nav{gap:14px}
+ nav a{font-size:12px}
+ .language-switch{gap:5px;padding-left:12px;font-size:11px}
+ .hero{grid-template-columns:1fr;gap:34px;padding-top:35px;padding-bottom:45px}
+ .hero-copy{padding:15px 0 0}
+ .hero h1{font-size:clamp(52px,13vw,78px)}
+ .name{margin-top:22px;font-size:17px}
+ .intro{font-size:14px}
+ .text-link{margin-top:25px}
+ .hero-image{width:min(100%,390px);height:auto;max-height:none;aspect-ratio:1195/1536}
+ .hero-image img{height:100%}
+ #cv{padding:65px 0}
+ .section-heading{display:block;margin-bottom:30px}
+ .section-subtitle{margin-top:18px}
+ .experience-group{grid-template-columns:1fr;gap:17px;padding:26px 0}
+ .experience-group h3{font-size:15px}
+ .experience-list li{align-items:flex-start;flex-direction:column;gap:3px;padding:13px 0}
+ .experience-title{font-size:14px}
+ .experience-date{text-align:left}
+ .about{padding:65px 0}
+ .about-grid{grid-template-columns:1fr;gap:28px}
+ .about-grid p:not(.eyebrow){font-size:15px}
+}
+@media(max-width:450px){
+ .bar{display:grid;grid-template-columns:1fr auto;gap:12px;padding:15px 0}
+ .header-actions{display:contents}
+ .language-switch{grid-column:2;grid-row:1;padding-left:0;border:0}
+ nav{grid-column:1 / -1;grid-row:2}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.research,.contact{padding:94px 0 100px;border-top:1px solid var(--line)}
+.research{background:#e9ece7}
+.research-list{display:grid;gap:0}
+.research-item{padding:27px 0 32px;border-top:1px solid var(--line)}
+.research-item h3{margin:0;font-size:clamp(18px,2.6vw,24px);line-height:1.45;letter-spacing:-.025em}
+.research-item p{margin:10px 0 0;max-width:78ch;font-size:15px;font-weight:400;line-height:1.85}
+.research-item .eyebrow{margin:0 0 8px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:none}
+.doc-actions{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px 24px;margin-top:14px}
+.doc-actions a,.doc-actions summary{font-weight:600;font-size:14px;text-underline-offset:4px;color:#314d3f}
+.doc-actions summary{cursor:pointer}
+.doc-actions summary:focus-visible{outline:3px solid #527562;outline-offset:5px}
+.doc-actions details{flex:1 1 180px}
+.doc-actions details[open]{flex-basis:100%;order:1}
+.doc-actions figure{margin:14px 0 0}
+.doc-actions img{display:block;width:min(100%,580px);height:auto;border:1px solid var(--line)}
+.contact dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:12px 24px;margin:0}
+.contact dt{font-weight:600}
+.contact dd{margin:0;overflow-wrap:anywhere}
+.contact a{text-underline-offset:4px}
+nav{gap:clamp(12px,2.3vw,35px)}
+@media(max-width:760px){.research,.contact{padding:65px 0}.bar{display:grid;grid-template-columns:1fr auto;gap:12px;padding:15px 0}.header-actions{display:contents}.language-switch{grid-column:2;grid-row:1;padding-left:0;border:0}nav{grid-column:1 / -1;grid-row:2;flex-wrap:wrap;gap:8px 17px}}
+
+.hero-image{height:auto;width:min(100%,350px);aspect-ratio:1195/1536}
+.foot{justify-content:flex-end}
+.source-link{display:inline-block;font-size:12px;font-weight:500;line-height:1.5;margin-top:5px;color:#476757;text-underline-offset:3px}
+@media(max-width:760px){.hero-image{width:min(75%,300px);aspect-ratio:1195/1536}}
+
+.brand{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.brand-character{display:block;width:38px;height:28px;object-fit:contain}
+.about,.research{background:#eef7fc}
+:root{--accent:#171917}
+.doc-actions a,.doc-actions summary,.source-link{color:#171917}
+.contact-icon{display:inline-block;width:1.7em;color:#171917;font-family:Arial,sans-serif;font-size:20px;line-height:1;font-variant-emoji:text}.cv-link{text-decoration:none}.cv-link:hover{opacity:.7}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">본문으로 이동</a>
+<header><div class="wrap bar">
+<a class="brand" href="#home"><img class="brand-character" src="assets/minions.jpg" alt="">Jeongeon Lim</a>
+<div class="header-actions">
+<nav aria-label="주 메뉴"><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#cv">CV</a><a href="#research">RESEARCH</a><a href="#contact">CONTACT</a></nav>
+<div class="language-switch" role="group" aria-label="Language">
+<a data-language href="index.html" hreflang="en" lang="en">English</a><span aria-hidden="true">/</span><a data-language href="ko.html" hreflang="ko" lang="ko" aria-current="page">한국어</a>
+</div>
+</div>
+</div></header>
+<main id="main">
+<section id="home" class="wrap hero" aria-labelledby="name">
+<div class="hero-copy">
+<h1 id="name"><span>Jeongeon</span><span>Lim.</span></h1>
+<p class="name">임정언 · 경찰대학 행정학과 3학년</p>
+<p class="intro">경찰학에서는 공공안전, 기술치안, 마약예방에, 행정학에서는 거버넌스, 관료제, 조직론, 행정계량분석에 관심을 갖고 공부하고 있는 경찰행정학도입니다.</p>
+</div>
+<div class="hero-image">
+<img src="assets/jeongeon-lim-portrait-4k.webp" alt="경찰대학 제복을 입은 임정언의 프로필 사진" width="2988" height="3840">
+</div>
+</section>
+<section class="section about" id="about" aria-labelledby="about-heading"><div class="wrap about-grid">
+<h2 id="about-heading">About</h2><div><p>임정언은 경찰대학 행정학과 3학년에 재학 중인 학부생이며, 재학 중 학업 우등상으로 경찰대학장 표창을 받았습니다. 학교폭력 초기대응 과정의 전자정보 보전 공백을 다룬 논문을 제1저자로 게재하고, 2026 전국 대학생 UAM 올림피아드에서 한국법제연구원 원장상을 수상하였습니다.</p><p>마약 예방과 공공안전에 대한 관심을 바탕으로 2027 UNODC Youth Forum 대한민국 대표 후보로 지명되었으며, 비엔나에서 열리는 포럼에 파견될 예정입니다. 유엔 마약위원회 전문가패널에는 마약예방 프로그램 개발 과정에서 청소년의 의견을 반영하는 방안을 제안하였습니다. 앞으로도 치안과 행정 분야의 연구를 통해 사회문제 해결에 기여하고자 합니다.</p></div>
+</div></section>
+<section class="section" id="cv" aria-labelledby="cv-heading"><div class="wrap">
+<div class="section-heading">
+<h2 id="cv-heading">CV</h2>
+</div>
+<section class="experience-group"><h3>학력</h3><ul class="experience-list">
+<li><span class="experience-title">경찰대학 행정학과</span><span class="experience-date">2024.03–현재</span></li>
+<li><span class="experience-title">서울대학교 교류수학</span><span class="experience-date">2024.12–2025.01</span></li>
+<li><span class="experience-title">세종국제고등학교</span><span class="experience-date">2019.03–2022.02</span></li>
+</ul></section>
+<section class="experience-group"><h3>연구와 대외 활동</h3><ul class="experience-list">
+<li><span class="experience-title">학업 우등상 · 경찰대학장 표창</span><span class="experience-date">2025.03</span></li>
+<li><span class="experience-title">학교폭력 초기대응 전자정보 보전 연구 · 제1저자</span><span class="experience-date">2026.09 게재</span></li>
+<li><span class="experience-title">전국 대학생 UAM 올림피아드 · 한국법제연구원 원장상</span><span class="experience-date">2026.11</span></li>
+<li><span class="experience-title">치안 기술 연구과제 2건</span></li>
+<li><span class="experience-title">UNODC Youth Forum 2027 후보 지명</span><span class="experience-date">2027.03 예정</span></li>
+<li><span class="experience-title">유엔 마약위원회 전문가패널 영문 의견서 제출</span><span class="experience-date">2026.11</span></li>
+<li><a class="experience-title cv-link" href="https://www.police.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1002&amp;q_bbscttSn=20261112132341781" target="_blank" rel="noopener noreferrer">제14차 국제 마약수사 컨퍼런스(ICON) · 한영 통역 지원 <span aria-hidden="true">↗</span></a><span class="experience-date">2026.11</span></li>
+</ul></section>
+<section class="experience-group"><h3>학생자치와 학내 교육</h3><ul class="experience-list">
+<li><span class="experience-title">경찰대학 44기 동기회 부회장</span><span class="experience-date">2026.08–현재</span></li>
+<li><span class="experience-title">경찰대학 신입생 교육 조교</span><span class="experience-date">2026–2027년</span></li>
+<li><span class="experience-title">경찰대학 학생회 학술국 위원</span><span class="experience-date">2024.09–2025.02</span></li>
+<li><span class="experience-title">경찰대학 교내 체육대회 준비위원</span><span class="experience-date">2024.03–현재</span></li>
+<li><span class="experience-title">경찰대학 교내 토론대회 준비위원</span><span class="experience-date">2024.03–현재</span></li>
+</ul></section>
+<section class="experience-group"><h3>청소년 교육과 지역사회 봉사</h3><ul class="experience-list">
+<li><span class="experience-title">아산시 학교밖청소년지원센터 · 교육봉사</span><span class="experience-date">2026.04–현재</span></li>
+<li><span class="experience-title">학교폭력피해자가족협의회 · 대학생 멘토</span><span class="experience-date">2025.07–현재</span></li>
+<li><span class="experience-title">굿네이버스 경북사업본부 · 마약근절 및 중독예방 실천 캠페인 ‘약속’</span><span class="experience-date">2025.08–2025.09</span></li>
+<li><span class="experience-title">KT&amp;G복지재단 상상위더스 · 인도네시아 해외교육봉사</span><span class="experience-date">2025.07</span></li>
+<li><span class="experience-title">KT&amp;G복지재단 · 벽화 봉사</span><span class="experience-date">2025.09, 2026.05</span></li>
+<li><span class="experience-title">아프리카아시아 난민교육후원회(ADRF) 번역 봉사</span><span class="experience-date">2020.03–2021.07</span></li>
+</ul></section>
+<section class="experience-group"><h3>고교 활동과 영재교육</h3><ul class="experience-list">
+<li><span class="experience-title">POSTECH 영재기업인교육원 9기 수료</span><span class="experience-date">2018.03–2020.01</span></li>
+<li><span class="experience-title">대만 문화고등학교 교류 프로그램 · 교류 버디</span><span class="experience-date">2019년</span></li>
+<li><span class="experience-title">세종시 유네스코학교 연합 한마당 · 사회 및 총괄</span><span class="experience-date">2019–2020년</span></li>
+<li><span class="experience-title">유네스코 동아리 대표</span><span class="experience-date">2020.03–2021.02</span></li>
+<li><span class="experience-title">세종국제고 학생회 부장</span><span class="experience-date">2020년</span></li>
+<li><a class="experience-title cv-link" href="https://seore.org/w/%EA%B5%AD%EC%A0%9C%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90?from=%EA%B5%AD%EC%A0%9C%EA%B3%A0" target="_blank" rel="noopener noreferrer">전국 국제고 연합 학술제 Venue 진행자 <span aria-hidden="true">↗</span></a><span class="experience-date">2020년</span></li>
+<li><span class="experience-title">세종국제고 종합인재상</span><span class="experience-date">2021년</span></li>
+</ul></section>
+<section class="experience-group"><h3>입시 멘토링과 교육 지원</h3><ul class="experience-list">
+<li><a class="experience-title cv-link" href="https://www.megastudy.net/campaign/study/snote_view.asp?idx=1111655&amp;mOne=study3&amp;mTwo=&amp;mento_cd=&amp;ord=1&amp;page=6&amp;skey02=&amp;sword=" target="_blank" rel="noopener noreferrer">메가스터디 목표달성장학생 20기 및 공식 입시 멘토 <span aria-hidden="true">↗</span></a><span class="experience-date">2024.04–2025.03</span></li>
+<li><span class="experience-title">POSTECH 영재원 · 교육조교</span><span class="experience-date">2024.09–2024.12</span></li>
+<li><span class="experience-title">경찰대학 입학전형 1차 시험 영어 문항 검수요원</span><span class="experience-date">2024.07–2024.08</span></li>
+</ul></section>
+</div></section>
+<section class="section research" id="research" aria-labelledby="research-heading"><div class="wrap">
+<div class="section-heading"><h2 id="research-heading">Research</h2></div>
+<div class="research-list"><article class="research-item">
+<p class="eyebrow">학술논문 · 제1저자 · 2026</p>
+<h3>학교폭력 초기대응에서 전자정보 보전의 공백에 관한 연구</h3>
+<p>임정언·이하나 · 『법학연구』 통권 제81집, 255–284쪽.</p>
+<p>학교폭력 사안이 발생했을 때 대화 내용이나 게시물 등 전자정보를 제때 보전하기 어려운 문제를 살펴본 연구입니다. 형사소송법상 전자증거 보전요청 요건을 학교의 초기대응 상황과 비교하여 시간적·제도적 공백을 분석하고, 학교와 경찰 간 정보 전달 절차를 정비하는 방안 등을 제안하였습니다.</p>
+<div class="doc-actions">
+<a class="source-link" href="https://kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003395140" target="_blank" rel="noopener noreferrer">KCI 논문 정보 ↗</a>
+<a href="assets/research/electronic-evidence.pdf" target="_blank" rel="noopener" aria-label="PDF 열기 · 학교폭력 초기대응에서 전자정보 보전의 공백에 관한 연구">PDF 열기 ↗</a>
+<details><summary>첫 페이지 미리보기</summary><figure><img src="assets/research/electronic-evidence.png" loading="lazy" alt="첫 페이지 미리보기 · 학교폭력 초기대응에서 전자정보 보전의 공백에 관한 연구"></figure></details>
+</div>
+</article>
+<article class="research-item">
+<p class="eyebrow">정책 제안 · 2026 전국 대학생 UAM 올림피아드 · 한국법제연구원 원장상</p>
+<h3>UAM 위험의 지상 전이에 대응하는 법제 혁신 방안</h3>
+<p>도심항공교통(UAM) 운항 중 발생한 위험이 지상으로 이어질 경우 시민의 안전을 보호하기 위한 법제와 대응 절차를 다룬 제안서입니다. 조류 충돌, 항법 장애, 낙하물 발생 상황을 중심으로 경찰의 경고·대피·통행 제한 조치와 관계기관의 초기 공동대응 방안을 제안하였습니다.</p>
+<div class="doc-actions">
+<a href="assets/research/uam-proposal.pdf" target="_blank" rel="noopener" aria-label="PDF 열기 · UAM 위험의 지상 전이에 대응하는 법제 혁신 방안">PDF 열기 ↗</a>
+<details><summary>첫 페이지 미리보기</summary><figure><img src="assets/research/uam-proposal.png" loading="lazy" alt="첫 페이지 미리보기 · UAM 위험의 지상 전이에 대응하는 법제 혁신 방안"></figure></details>
+</div>
+</article>
+<article class="research-item">
+<p class="eyebrow">영문 의견서 · 유엔 마약위원회 전문가패널 제출 · 2026</p>
+<h3>마약예방 프로그램 개발을 위한 청소년 참여 방안</h3>
+<p>청소년이 마약예방 교육자료를 직접 검토하고 의견을 제시할 수 있도록 하는 시범사업을 제안한 영문 의견서입니다. 담당 기관이 의견의 반영 여부와 이유를 참여자에게 알리고, 수정된 자료가 청소년에게 필요한 도움과 연락 방법을 명확하게 전달하는지 평가하는 방안을 제시하였습니다.</p>
+<div class="doc-actions">
+<a href="assets/research/cnd-contribution.pdf" target="_blank" rel="noopener" aria-label="PDF 열기 · 마약예방 프로그램 개발을 위한 청소년 참여 방안">PDF 열기 ↗</a>
+<details><summary>첫 페이지 미리보기</summary><figure><img src="assets/research/cnd-contribution.png" loading="lazy" alt="첫 페이지 미리보기 · 마약예방 프로그램 개발을 위한 청소년 참여 방안"></figure></details>
+</div>
+</article></div>
+</div></section>
+<section class="section contact" id="contact" aria-labelledby="contact-heading"><div class="wrap about-grid">
+<h2 id="contact-heading">Contact</h2>
+<dl>
+<dt><span class="contact-icon" aria-hidden="true">☎︎</span>전화</dt><dd><a href="tel:+821045952697">010-4595-2697</a></dd>
+<dt><span class="contact-icon" aria-hidden="true">✉︎</span>이메일</dt><dd><a href="mailto:dangamlim@gmail.com">dangamlim@gmail.com</a></dd>
+<dt><span class="contact-icon" aria-hidden="true">⌂</span>웹사이트</dt><dd><a href="https://dangamlim.github.io/">https://dangamlim.github.io/</a></dd>
+</dl>
+</div></section>
+</main>
+<footer><div class="wrap foot"><a href="#top">TOP ↑</a></div></footer>
+<script>
+for (const link of document.querySelectorAll('[data-language]')) {
+  link.addEventListener('click', () => {
+    const target = new URL(link.href);
+    target.hash = window.location.hash;
+    link.href = target.href;
+  });
+}
+</script>
+</body>
+</html>
