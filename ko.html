@@ -134,6 +134,9 @@ nav{gap:clamp(12px,2.3vw,35px)}
 .contact-icon{display:inline-block;width:1.7em;color:#171917;font-family:Arial,sans-serif;font-size:20px;line-height:1;font-variant-emoji:text}.cv-link{text-decoration:none}.cv-link:hover{opacity:.7}
 
 .contact-icon{display:inline-block;width:20px;height:20px;margin-right:10px;vertical-align:-4px;color:#171917}.contact dt{white-space:nowrap}
+
+.volunteer-hours{display:block;margin-top:6px;font-size:12px;font-weight:500;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.js-reveal .section-reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}.js-reveal .section-reveal.is-visible{opacity:1;transform:none}}
 </style>
 </head>
 <body id="top">
@@ -186,7 +189,7 @@ nav{gap:clamp(12px,2.3vw,35px)}
 <li><span class="experience-title">경찰대학 교내 체육대회 준비위원</span><span class="experience-date">2024.03–현재</span></li>
 <li><span class="experience-title">경찰대학 교내 토론대회 준비위원</span><span class="experience-date">2024.03–현재</span></li>
 </ul></section>
-<section class="experience-group"><h3>청소년 교육과 지역사회 봉사</h3><ul class="experience-list">
+<section class="experience-group"><h3>봉사활동과 지역사회 활동 <span class="volunteer-hours">500시간 이상</span></h3><ul class="experience-list">
 <li><span class="experience-title">아산시 학교밖청소년지원센터 · 교육봉사</span><span class="experience-date">2026.04–현재</span></li>
 <li><span class="experience-title">학교폭력피해자가족협의회 · 대학생 멘토</span><span class="experience-date">2025.07–현재</span></li>
 <li><span class="experience-title">굿네이버스 경북사업본부 · 마약근절 및 중독예방 실천 캠페인 ‘약속’</span><span class="experience-date">2025.08–2025.09</span></li>
@@ -198,14 +201,14 @@ nav{gap:clamp(12px,2.3vw,35px)}
 <li><span class="experience-title">POSTECH 영재기업인교육원 9기 수료</span><span class="experience-date">2018.03–2020.01</span></li>
 <li><span class="experience-title">대만 문화고등학교 교류 프로그램 · 교류 버디</span><span class="experience-date">2019년</span></li>
 <li><span class="experience-title">세종시 유네스코학교 연합 한마당 · 사회 및 총괄</span><span class="experience-date">2019–2020년</span></li>
-<li><span class="experience-title">유네스코 동아리 대표</span><span class="experience-date">2020.03–2021.02</span></li>
+<li><span class="experience-title">세종국제고 유네스코 동아리 대표</span><span class="experience-date">2020.03–2021.02</span></li>
 <li><span class="experience-title">세종국제고 학생회 부장</span><span class="experience-date">2020년</span></li>
 <li><a class="experience-title cv-link" href="https://seore.org/w/%EA%B5%AD%EC%A0%9C%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90?from=%EA%B5%AD%EC%A0%9C%EA%B3%A0" target="_blank" rel="noopener noreferrer">전국 국제고 연합 학술제 Venue 진행자 <span aria-hidden="true">↗</span></a><span class="experience-date">2020년</span></li>
 <li><span class="experience-title">세종국제고 종합인재상</span><span class="experience-date">2021년</span></li>
 </ul></section>
 <section class="experience-group"><h3>입시 멘토링과 교육 지원</h3><ul class="experience-list">
 <li><a class="experience-title cv-link" href="https://www.megastudy.net/campaign/study/snote_view.asp?idx=1111655&amp;mOne=study3&amp;mTwo=&amp;mento_cd=&amp;ord=1&amp;page=6&amp;skey02=&amp;sword=" target="_blank" rel="noopener noreferrer">메가스터디 목표달성장학생 20기 및 공식 입시 멘토 <span aria-hidden="true">↗</span></a><span class="experience-date">2024.04–2025.03</span></li>
-<li><span class="experience-title">POSTECH 영재원 · 교육조교</span><span class="experience-date">2024.09–2024.12</span></li>
+<li><span class="experience-title">POSTECH 영재기업인교육원 · 교육조교</span><span class="experience-date">2024.09–2024.12</span></li>
 <li><span class="experience-title">경찰대학 입학전형 1차 시험 영어 문항 검수요원</span><span class="experience-date">2024.07–2024.08</span></li>
 </ul></section>
 </div></section>
@@ -259,6 +262,20 @@ for (const link of document.querySelectorAll('[data-language]')) {
     target.hash = window.location.hash;
     link.href = target.href;
   });
+}
+
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const sections = document.querySelectorAll('main > section:not(#home)');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -5% 0px', threshold: 0 });
+  sections.forEach((section) => { section.classList.add('section-reveal'); observer.observe(section); });
+  document.documentElement.classList.add('js-reveal');
 }
 </script>
 </body>
